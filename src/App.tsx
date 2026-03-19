@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// App.tsx — React Router v6 integration
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Gallery from "./pages/Gallery";
+import AdminPanel from "./pages/AdminPanel";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Gallery />} />
+        <Route path="/admin" element={<AdminPanel />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
-export default App;
+// ─── File structure ───
+// src/
+//   api/
+//     supabaseClient.ts     ← shared supabase client
+//   pages/
+//     Gallery.tsx           ← public gallery (/)
+//     AdminPanel.tsx        ← admin panel (/admin)
+//   App.tsx                 ← routes (this file)
+//
+// ─── Install dependencies ───
+// npm install @supabase/supabase-js react-router-dom
