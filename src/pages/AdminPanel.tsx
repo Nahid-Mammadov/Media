@@ -202,27 +202,6 @@ export default function AdminPanel() {
           />
         </main>
       </div>
-      );
-      <AdminUpload
-        title={title}
-        setTitle={setTitle}
-        file={file}
-        setFile={setFile}
-        handleUpload={handleUpload}
-      />
-      <AdminTable
-        posts={filtered}
-        handleDelete={handleDelete}
-        openEdit={openEdit}
-      />
-      <AdminEditModal
-        editPost={editPost}
-        setEditPost={setEditPost}
-        editTitle={editTitle}
-        setEditTitle={setEditTitle}
-        setEditFile={setEditFile}
-        handleEditSave={handleEditSave}
-      />
     </>
   );
 }
